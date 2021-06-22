@@ -2,6 +2,7 @@
     --dark: #0c0c0c;
     --green: #37D27F;
     --light: #C2E8FF;
+    --shade: #7c77b9;
 }
 
 body {
@@ -17,7 +18,21 @@ body {
 }
 
 main {
-    border: 5px solid var(--light);
+    border: 5px solid var(--shade);
     height: 600px;
     width: 450px;
+}
+
+#display {
+    box-sizing: border-box;
+    border: 5px solid var(--shade);
+    height: 180px;
+    width: 100%;
+}
+
+#keypad {
+    box-sizing: border-box;
+    border: 5px solid var(--shade);
+    height: 420px;
+    width: 100%;
 }
