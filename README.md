@@ -16,8 +16,3 @@ The calculator performs _**1+2**_ first and adds the result (_**3**_) with the n
 *   HTML
 *   CSS
 *   JAVASCRIPT
- 
-## Sample colour palatte ([coolors](http://coolors.co)):
-(subject to change)
-_37D27F, C2E8FF, 0c0c0c, 7c77b9, 1d8a99_
-![view](./images/palatte.png)
