@@ -18,21 +18,32 @@ body {
 }
 
 main {
-    border: 5px solid var(--shade);
+    border: 3px solid var(--green);
     height: 600px;
     width: 450px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 0px 1px var(--light);
 }
 
 #display {
     box-sizing: border-box;
-    border: 5px solid var(--shade);
     height: 180px;
     width: 100%;
+    border-radius: 25px;
 }
 
 #keypad {
     box-sizing: border-box;
-    border: 5px solid var(--shade);
     height: 420px;
     width: 100%;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+        'all-clear clear change-sign divide'
+        'seven eight nine multiply'
+        'four five six subtract'
+        'one two three add'
+        'zero zero equals equals';
 }
