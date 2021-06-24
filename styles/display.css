@@ -1,0 +1,36 @@
+#display {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--green);
+    box-sizing: border-box;
+    border-radius: 25px;
+    color: var(--green);
+    font-family: 'Sirin Stencil', monospace;
+    word-wrap: break-word;
+}
+
+#warning {
+    height: 30px;
+    width: 100%;
+    border: 1px solid var(--green);
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+#superscript {
+    height: 30px;
+    width: 100%;
+    border: 1px solid var(--green);
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+#main-display {
+    height: 120px;
+    width: 100%;
+    border: 1px solid var(--green);
+    box-sizing: border-box;
+    border-radius: 25px;
+    font-size: 40px;
+}
+

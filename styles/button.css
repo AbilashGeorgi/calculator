@@ -1,7 +1,7 @@
 button {
     background-color: var(--dark);
     font-size: x-large;
-    font-family: monospace;    
+    font-family: monospace;   
     color: var(--light);
     box-shadow: 3px 4px 0px 0px var(--green);
     text-decoration: none;
