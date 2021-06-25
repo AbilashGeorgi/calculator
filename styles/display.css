@@ -1,36 +1,58 @@
 #display {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--green);
     box-sizing: border-box;
-    border-radius: 25px;
     color: var(--green);
     font-family: 'Sirin Stencil', monospace;
     word-wrap: break-word;
-}
-
-#warning {
-    height: 30px;
-    width: 100%;
-    border: 1px solid var(--green);
-    box-sizing: border-box;
-    border-radius: 25px;
+    padding: 5px;
 }
 
 #superscript {
-    height: 30px;
+    height: 50px;
     width: 100%;
-    border: 1px solid var(--green);
     box-sizing: border-box;
-    border-radius: 25px;
+    font-size: 120%;
+    text-align: right;
+    color: var(--light);
 }
 
 #main-display {
-    height: 120px;
+    text-align: right;
+    height: 130px;
     width: 100%;
-    border: 1px solid var(--green);
     box-sizing: border-box;
-    border-radius: 25px;
-    font-size: 40px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
 }
-
+#first {
+    height: 40px;
+    width: 100%;
+    font-size: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+#second {
+    height: 40px;
+    width: 100%;
+    font-size: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+#operator {
+    height: 40px;
+    text-align: center;
+    text-decoration: solid;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 30px;
+    width: 100%;
+    padding-right: 20px;
+}

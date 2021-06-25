@@ -19,3 +19,21 @@ function selfDestruct() {
     
 }
 
+const buttonListener = (e)=>{clickButton(e.target.innerText)};
+function initialiseButtons() {
+    const buttons = document.querySelectorAll('button')
+    buttons.forEach((button) => {button.addEventListener('click', buttonListener)})
+}
+
+function clickButton(value) {
+    console.log(value);
+    display(value);
+}
+
+function display(value) {
+    //limit - 20
+    const mainDisplay= document.querySelector('#first');
+    mainDisplay.innerText += value;
+}
+
+initialiseButtons();
