@@ -1,10 +1,5 @@
-function test() {
-    console.log(operator);
-}
-
 //entry function
 function operate(firstNumber, secondNumber, operator) {
-    test();
     switch (operator) {
         case ADD:
             return add(firstNumber,secondNumber);
