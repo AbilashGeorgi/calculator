@@ -1,4 +1,4 @@
-//class variable to decide which display to use. See chooseDisplay() function.
+//variable to decide which display to use. See chooseDisplay() function.
 let currDisplay = 'first';
 //numbers and operator store
 let firstNumber = 0;
@@ -16,9 +16,15 @@ function isNumber(value) {
 function isOperator(value) {
     return OPERATORS.includes(value);
 }
+function isSpecial(value) {
+    return SPECIALS.includes(value);
+}
 
 // update the display based on choice.
 function display(value) {
+    if (isSpecial(value)) {
+        return;
+    }
     chooseDisplay(value);
     const mainDisplay= document.querySelector(`#${currDisplay}`);
     mainDisplay.innerText += value;
@@ -27,6 +33,7 @@ function chooseDisplay(value) {
     if (isOperator(value)) {
         currDisplay = 'operator';
     } else if (isNumber(value) && currDisplay === 'operator') {
+        //if already on operator display and entering a number switch to second operator display
         currDisplay = 'second';
     }
 }
@@ -36,6 +43,8 @@ function clickButton(value) {
         value = operate(firstNumber,secondNumber,operator);
         resetCalc();
         firstNumber = value;
+    } else if (value === CLEAR) {
+        clear();
     } else if (isOperator(value)) {
         operator = value;
     } else if (isNumber(value)) {
@@ -45,7 +54,6 @@ function clickButton(value) {
             secondNumber = secondNumber*10 + +value;
         }
     }
-    console.log(value);
     display(value);
 }
 
@@ -59,6 +67,17 @@ function resetCalc() {
     displays.push(document.querySelector('#second'));
     displays.push(document.querySelector('#operator'));
     displays.forEach((display) => display.textContent = '');
+}
+function clear() {
+    value = document.querySelector(`#${currDisplay}`);
+    if (currDisplay === 'operator') {
+        operator = null;
+    } else if (currDisplay === 'first') {
+        firstNumber = +value.textContent.slice(0,-1);
+    } else if (currDisplay === 'second') {
+        secondNumber = +value.textContent.slice(0,-1);
+    }
+    value.textContent = value.textContent.slice(0,-1);
 }
 
 //add listeners to buttons
