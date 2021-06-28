@@ -16,3 +16,5 @@ The calculator performs _**1+2**_ first and adds the result (_**3**_) with the n
 *   HTML
 *   CSS
 *   JAVASCRIPT
+
+Multiple display for first operand, second operand, operator wasn't a great decision.

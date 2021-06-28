@@ -74,10 +74,13 @@ function clear() {
     value = document.querySelector(`#${currDisplay}`);
     if (currDisplay === 'operator') {
         operator = null;
+        currDisplay = 'first';
     } else if (currDisplay === 'first') {
         firstNumber = +value.textContent.slice(0,-1);
     } else if (currDisplay === 'second') {
         secondNumber = +value.textContent.slice(0,-1);
+        // switch display if no more content in second number.
+        if (value.textContent.length === 1) currDisplay = 'operator';
     }
     value.textContent = value.textContent.slice(0,-1);
 }
