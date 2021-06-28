@@ -11,6 +11,9 @@ function validate(value) {
             return false;
         }
     }
+    if (isOperator(value) && currDisplay != FIRST_DISPLAY) {
+        return false;
+    }
 
     return true;
 }
