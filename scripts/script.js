@@ -1,5 +1,5 @@
 //variable to decide which display to use. See chooseDisplay() function.
-let currDisplay = 'first';
+let currDisplay = FIRST_DISPLAY;
 //numbers and operator store
 let firstNumber = 0;
 let secondNumber = 0;
@@ -31,10 +31,10 @@ function display(value) {
 }
 function chooseDisplay(value) {
     if (isOperator(value)) {
-        currDisplay = 'operator';
-    } else if (isNumber(value) && currDisplay === 'operator') {
+        currDisplay = OPERATOR_DISPLAY;
+    } else if (isNumber(value) && currDisplay === OPERATOR_DISPLAY) {
         //if already on operator display and entering a number switch to second operator display
-        currDisplay = 'second';
+        currDisplay = SECOND_DISPLAY;
     }
 }
 // main function that handles keypress
@@ -68,24 +68,24 @@ function resetCalc() {
     firstNumber = 0;
     secondNumber = 0;
     operator = null;
-    currDisplay = 'first';
+    currDisplay = FIRST_DISPLAY;
     const displays = [];
-    displays.push(document.querySelector('#first'));
-    displays.push(document.querySelector('#second'));
-    displays.push(document.querySelector('#operator'));
+    displays.push(document.querySelector(`#${FIRST_DISPLAY}`));
+    displays.push(document.querySelector(`#${SECOND_DISPLAY}`));
+    displays.push(document.querySelector(`#${OPERATOR_DISPLAY}`));
     displays.forEach((display) => display.textContent = '');
 }
 function clear() {
     value = document.querySelector(`#${currDisplay}`);
-    if (currDisplay === 'operator') {
+    if (currDisplay === OPERATOR) {
         operator = null;
-        currDisplay = 'first';
-    } else if (currDisplay === 'first') {
+        currDisplay = FIRST_DISPLAY;
+    } else if (currDisplay === FIRST_DISPLAY) {
         firstNumber = +value.textContent.slice(0,-1);
-    } else if (currDisplay === 'second') {
+    } else if (currDisplay === SECOND_DISPLAY) {
         secondNumber = +value.textContent.slice(0,-1);
         // switch display if no more content in second number.
-        if (value.textContent.length === 1) currDisplay = 'operator';
+        if (value.textContent.length === 1) currDisplay = OPERATOR_DISPLAY;
     }
     value.textContent = value.textContent.slice(0,-1);
 }

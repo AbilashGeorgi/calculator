@@ -27,3 +27,7 @@ const OPERATORS = [ADD, SUBTRACT, MULTIPLY, DIVIDE];
 
 //all
 const ALL_OPTIONS = [...NUMBERS, ...OPERATORS, ...SPECIALS];
+
+const FIRST_DISPLAY = 'first';
+const SECOND_DISPLAY = 'second';
+const OPERATOR_DISPLAY = 'operator';
