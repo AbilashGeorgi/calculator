@@ -43,6 +43,8 @@ function clickButton(value) {
         value = operate(firstNumber,secondNumber,operator);
         resetCalc();
         firstNumber = value;
+    } else if (value === ALL_CLEAR) {
+        resetCalc();
     } else if (value === CLEAR) {
         clear();
     } else if (isOperator(value)) {
