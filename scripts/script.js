@@ -50,6 +50,8 @@ function clickButton(value) {
         resetCalc();
     } else if (value === CLEAR) {
         clear();
+    } else if (value === CHANGE_SIGN) {
+        changeSign();
     } else if (isOperator(value)) {
         operator = value;
     } else if (isNumber(value)) {
@@ -86,6 +88,10 @@ function clear() {
         if (value.textContent.length === 1) currDisplay = 'operator';
     }
     value.textContent = value.textContent.slice(0,-1);
+}
+function changeSign() {
+    value = document.querySelector(`#${currDisplay}`);
+    value.textContent = value.textContent * -1;
 }
 
 //add listeners to buttons
