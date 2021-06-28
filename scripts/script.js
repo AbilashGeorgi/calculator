@@ -4,6 +4,7 @@ let currDisplay = FIRST_DISPLAY;
 let firstNumber = 0;
 let secondNumber = 0;
 let operator;
+let history = '';
 
 //converter from string to const.
 function getConstant(value) {
@@ -29,6 +30,15 @@ function display(value) {
     const mainDisplay= document.querySelector(`#${currDisplay}`);
     mainDisplay.innerText += value;
 }
+function displayHistory(result) {
+    const historyDisplay = document.querySelector(`#${HISTORY_DISPLAY}`);
+    historyDisplay.innerText += firstNumber;
+    historyDisplay.innerText += operator;
+    historyDisplay.innerText += secondNumber;
+    historyDisplay.innerText += '=';
+    historyDisplay.innerText += result;
+    historyDisplay.innerText += ',';
+}
 function chooseDisplay(value) {
     if (isOperator(value)) {
         currDisplay = OPERATOR_DISPLAY;
@@ -44,10 +54,11 @@ function clickButton(value) {
     };
     if (value === EQUALS) {
         value = operate(firstNumber,secondNumber,operator);
-        resetCalc();
+        displayHistory(value);
+        resetCalc(false);
         firstNumber = value;
     } else if (value === ALL_CLEAR) {
-        resetCalc();
+        resetCalc(true);
     } else if (value === CLEAR) {
         clear();
     } else if (value === CHANGE_SIGN) {
@@ -64,7 +75,7 @@ function clickButton(value) {
     display(value);
 }
 
-function resetCalc() {
+function resetCalc(removeHistory) {
     firstNumber = 0;
     secondNumber = 0;
     operator = null;
@@ -73,11 +84,12 @@ function resetCalc() {
     displays.push(document.querySelector(`#${FIRST_DISPLAY}`));
     displays.push(document.querySelector(`#${SECOND_DISPLAY}`));
     displays.push(document.querySelector(`#${OPERATOR_DISPLAY}`));
+    if (removeHistory) displays.push(document.querySelector(`#${HISTORY_DISPLAY}`));
     displays.forEach((display) => display.textContent = '');
 }
 function clear() {
     value = document.querySelector(`#${currDisplay}`);
-    if (currDisplay === OPERATOR) {
+    if (currDisplay === OPERATOR_DISPLAY) {
         operator = null;
         currDisplay = FIRST_DISPLAY;
     } else if (currDisplay === FIRST_DISPLAY) {
