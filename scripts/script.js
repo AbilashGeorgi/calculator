@@ -39,6 +39,9 @@ function chooseDisplay(value) {
 }
 // main function that handles keypress
 function clickButton(value) {
+    if (!validate(value)) {
+        return;
+    };
     if (value === EQUALS) {
         value = operate(firstNumber,secondNumber,operator);
         resetCalc();
