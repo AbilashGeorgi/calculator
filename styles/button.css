@@ -82,4 +82,6 @@ button.special{
 #nine{
     grid-area: nine;
 }
-
+#decimal-point{
+    grid-area: decimal-point;
+}

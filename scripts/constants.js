@@ -16,7 +16,8 @@ const ALL_CLEAR = 'AC';
 const CLEAR = 'C';
 const EQUALS = '=';
 const CHANGE_SIGN = '+/-';
-const SPECIALS = [ALL_CLEAR, CLEAR, EQUALS, CHANGE_SIGN];
+const DECIMAL_POINT = '.';
+const SPECIALS = [ALL_CLEAR, CLEAR, EQUALS, CHANGE_SIGN, DECIMAL_POINT];
 
 //operators
 const MULTIPLY = '*';

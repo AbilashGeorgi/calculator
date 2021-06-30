@@ -23,7 +23,7 @@ function isSpecial(value) {
 
 // update the display based on choice.
 function display(value) {
-    if (isSpecial(value)) {
+    if (isSpecial(value) && !(value === DECIMAL_POINT)) {
         return;
     }
     chooseDisplay(value);
