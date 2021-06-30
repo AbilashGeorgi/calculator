@@ -31,6 +31,9 @@ function display(value) {
     }
     chooseDisplay(value);
     const mainDisplay= document.querySelector(`#${currDisplay}`);
+    if ((''+value).length > displayLimit) {
+        value = (''+value).substr(0,displayLimit);
+    }
     mainDisplay.textContent += value;
 }
 function displayHistory(result) {
@@ -125,3 +128,8 @@ function initialiseButtons() {
 }
 
 initialiseButtons();
+window.addEventListener('keydown', function(e) {
+    const button = document.querySelector(`button[data-key="${e.keyCode}"]`);
+    if (!button) return;
+    button.click();
+});
