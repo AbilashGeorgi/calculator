@@ -1,6 +1,11 @@
-const { REFUSED } = require("dns");
-
 function validate(value) {
+    if (!isOperator(value) && ((currDisplay === FIRST_DISPLAY) || (currDisplay === SECOND_DISPLAY))) {
+        // don't let numbers overflow
+        value = document.querySelector(`#${currDisplay}`).textContent;
+        if (value.length > displayLimit) {
+            return false;
+        }
+    }
     if (value === EQUALS) {
         if (currDisplay != SECOND_DISPLAY && document.querySelector(`#${SECOND_DISPLAY}`).textContent.length === 0) {
             return false;

@@ -5,6 +5,9 @@ let firstNumber = 0;
 let secondNumber = 0;
 let operator;
 let history = '';
+//limits to display length.
+const historyLimit = 70;
+const displayLimit = 18;
 
 //converter from string to const.
 function getConstant(value) {
@@ -31,13 +34,18 @@ function display(value) {
     mainDisplay.textContent += value;
 }
 function displayHistory(result) {
+    const resultString = firstNumber+operator+secondNumber+'='+result+',';
     const historyDisplay = document.querySelector(`#${HISTORY_DISPLAY}`);
-    historyDisplay.textContent += firstNumber;
-    historyDisplay.textContent += operator;
-    historyDisplay.textContent += secondNumber;
-    historyDisplay.textContent += '=';
-    historyDisplay.textContent += result;
-    historyDisplay.textContent += ',';
+    if (resultString.length > historyLimit) {
+        historyDisplay.textContent = '';
+    }
+    let history = historyDisplay.textContent;
+    while (history.length + resultString.length > historyLimit) {
+        history = history.substring(history.indexOf(',') + 1);
+    }
+    history = history +resultString;
+    historyDisplay.textContent = history;
+
 }
 function chooseDisplay(value) {
     if (isOperator(value)) {
