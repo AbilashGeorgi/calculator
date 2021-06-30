@@ -28,16 +28,16 @@ function display(value) {
     }
     chooseDisplay(value);
     const mainDisplay= document.querySelector(`#${currDisplay}`);
-    mainDisplay.innerText += value;
+    mainDisplay.textContent += value;
 }
 function displayHistory(result) {
     const historyDisplay = document.querySelector(`#${HISTORY_DISPLAY}`);
-    historyDisplay.innerText += firstNumber;
-    historyDisplay.innerText += operator;
-    historyDisplay.innerText += secondNumber;
-    historyDisplay.innerText += '=';
-    historyDisplay.innerText += result;
-    historyDisplay.innerText += ',';
+    historyDisplay.textContent += firstNumber;
+    historyDisplay.textContent += operator;
+    historyDisplay.textContent += secondNumber;
+    historyDisplay.textContent += '=';
+    historyDisplay.textContent += result;
+    historyDisplay.textContent += ',';
 }
 function chooseDisplay(value) {
     if (isOperator(value)) {
@@ -110,7 +110,7 @@ function changeSign() {
 }
 
 //add listeners to buttons
-const buttonListener = (e)=>{clickButton(getConstant(e.target.innerText))};
+const buttonListener = (e)=>{clickButton(getConstant(e.target.textContent))};
 function initialiseButtons() {
     const buttons = document.querySelectorAll('button')
     buttons.forEach((button) => {button.addEventListener('click', buttonListener)})
