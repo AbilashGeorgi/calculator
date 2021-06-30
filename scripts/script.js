@@ -53,6 +53,9 @@ function clickButton(value) {
         return;
     };
     if (value === EQUALS) {
+        firstNumber = +document.querySelector(`#${FIRST_DISPLAY}`).textContent;
+        secondNumber = +document.querySelector(`#${SECOND_DISPLAY}`).textContent;
+        operator = getConstant(document.querySelector(`#${OPERATOR_DISPLAY}`).textContent);
         value = operate(firstNumber,secondNumber,operator);
         displayHistory(value);
         resetCalc(false);

@@ -6,5 +6,4 @@ _37D27F, C2E8FF, 0c0c0c, 7c77b9, 1d8a99_
 ## LAYOUT
 ![view](./images/layout.png)
 
-have to correct change sign, maybe design change
 have to add decimal point
