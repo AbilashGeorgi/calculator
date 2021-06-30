@@ -5,5 +5,3 @@ _37D27F, C2E8FF, 0c0c0c, 7c77b9, 1d8a99_
 
 ## LAYOUT
 ![view](./images/layout.png)
-
-have to add decimal point
