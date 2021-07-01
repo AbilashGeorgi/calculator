@@ -6,11 +6,7 @@
 *   Multiplication
 
 The calculator performs operations on 2 operands at a time.
-
-Example - If the following keys are pressed in order: 
-> 1 + 2 + 3 =
-
-The calculator performs _**1+2**_ first and adds the result (_**3**_) with the next operand giving _**6**_ as the final answer.
+User is allowed to enter more operators after the first operation is completed using the '='/'enter' key.
 
 ## This project utilises the following technologies:
 *   HTML
@@ -18,3 +14,5 @@ The calculator performs _**1+2**_ first and adds the result (_**3**_) with the n
 *   JAVASCRIPT
 
 Multiple display for first operand, second operand, operator wasn't a great decision.
+Lots of excess code for boxing in to any further enhancements.
+Simpler design would have been better.

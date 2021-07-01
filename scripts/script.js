@@ -31,8 +31,9 @@ function display(value) {
     }
     chooseDisplay(value);
     const mainDisplay= document.querySelector(`#${currDisplay}`);
+    //dont display laaaarge numbers that have to be cut of history will display them
     if ((''+value).length > displayLimit) {
-        value = (''+value).substr(0,displayLimit);
+        return;
     }
     mainDisplay.textContent += value;
 }
