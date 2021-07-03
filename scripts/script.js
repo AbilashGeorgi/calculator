@@ -69,6 +69,7 @@ function clickButton(value) {
         secondNumber = +document.querySelector(`#${SECOND_DISPLAY}`).textContent;
         operator = getConstant(document.querySelector(`#${OPERATOR_DISPLAY}`).textContent);
         value = operate(firstNumber,secondNumber,operator);
+        if (value === "/0") return; //handle divide by 0
         displayHistory(value);
         resetCalc(false);
         firstNumber = value;
